@@ -1,1 +1,1 @@
-<a href="https://ulyanashnyr.github.io/Calendar-React/.">View</a>
+<a href="https://ulyanashnyr.github.io/Calendar-React/">View</a>
