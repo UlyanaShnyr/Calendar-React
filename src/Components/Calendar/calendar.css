@@ -1,0 +1,35 @@
+.calendar-container{
+   width: 100%;
+    
+}
+
+table{
+    width: 525px;
+    margin: auto; 
+    border: 2px solid rgb(9, 232, 248);
+    margin-top: 20px;
+}
+
+tr{
+    text-align: center;
+}
+tr:first-child {
+    background-color: rgb(9, 232, 248);
+   
+}
+.calendar td{
+    width: 75px;  
+}
+
+.calendar-header tr{
+    text-align: center;
+}
+
+.current-day {
+    background-color:  rgb(9, 232, 248);
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    border-radius: 2%;
+    color: white;
+}

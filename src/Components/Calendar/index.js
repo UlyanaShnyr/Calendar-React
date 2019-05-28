@@ -3,12 +3,19 @@ import moment from 'moment';
 import './calendar.css';
 
 export default class Calendar extends React.Component {
-    state = {
+    state = {        
         dateContext: moment(),
         today: moment(),
-        showMonthPopup: false,
-        showYearPopup: false,       
+        showMonth: false,
+        showYear: false,       
     }
+
+    // constructor(props){
+    //     super(props);
+    //     this.style = props.style || {};
+    // }
+
+   
   
 
     weekdays = moment.weekdays();
@@ -29,12 +36,13 @@ export default class Calendar extends React.Component {
         return this.state.dateContext.get("date");
     }
     currentDay = () => {
-        return this.state.dateContext.format("D");
+        console.log("currentDay: ", this.state.dateContext.get("date"));
+        return this.state.dateContext.get("date");
     }
 
     firstDayOfMonth = () => {
         let dateContext = this.state.dateContext;
-        let firstDay = moment(dateContext).startOf('month').format('d'); // Day of week 0...1..5...6
+        let firstDay = moment(dateContext).startOf('month').format('d'); 
         return firstDay;
     }
 
@@ -48,7 +56,7 @@ export default class Calendar extends React.Component {
 
         let blanks = [];
         for (let i = 0; i < this.firstDayOfMonth(); i++) {
-            blanks.push(<td key={i * 80} className="emptySlot">
+            blanks.push(<td key={i * 100} className="emptySlot">
                 {""}
                 </td>
             );
@@ -58,14 +66,17 @@ export default class Calendar extends React.Component {
 
         let daysInMonth = [];
         for (let d = 1; d <= this.daysInMonth(); d++) {
-            let className = (d == this.currentDay() ? "day current-day": "day");         
+            let className = (d === this.currentDay() ? "day current-day": "day");  
+            console.log(this.currentDay)    ;   
             daysInMonth.push(
                 <td key={d} className={className } >
                     <span>{d}</span>
                 </td>
             );
+                 
         }
-
+       
+        
 
         console.log("days: ", daysInMonth);
 
@@ -90,18 +101,18 @@ export default class Calendar extends React.Component {
 
         let trElems = rows.map((d, i) => {
             return (
-                <tr key={i*100}>
+                <tr key={i*80}>
                     {d}
                 </tr>
             );
         })
 
         return (
-            <div className="calendar-container" style={this.style}>
+            <div className="calendar-container">
                 <table className="calendar">
                     <thead>
-                        <tr className="calendar-header">
-                            
+                        <tr className="calendar-header">                          
+                   
                         </tr>
                     </thead>
                     <tbody>
