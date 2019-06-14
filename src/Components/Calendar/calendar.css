@@ -1,30 +1,24 @@
-.calendar-container{
+.calendar-container {
    width: 100%;
-    
 }
-
-table{
+table {
     width: 525px;
     margin: auto; 
     border: 2px solid rgb(9, 232, 248);
     margin-top: 20px;
 }
-
-tr{
+tr {
     text-align: center;
 }
 tr:first-child {
-    background-color: rgb(9, 232, 248);
-   
+    background-color: rgb(9, 232, 248);   
 }
-.calendar td{
+.calendar td {
     width: 75px;  
 }
-
-.calendar-header tr{
+.calendar-header tr {
     text-align: center;
 }
-
 .current-day {
     background-color:  rgb(9, 232, 248);
     width: 28px;
@@ -32,4 +26,7 @@ tr:first-child {
     line-height: 28px;
     border-radius: 2%;
     color: white;
+}
+.month-popup {
+    background-color: white;    
 }
